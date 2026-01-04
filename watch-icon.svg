@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96">
+  <defs>
+    <!-- Lens glow -->
+    <radialGradient id="lens" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#ffd6f5"/>
+      <stop offset="55%" stop-color="#ff5bc4"/>
+      <stop offset="100%" stop-color="#7a003a"/>
+    </radialGradient>
+
+    <!-- Body gradient -->
+    <linearGradient id="body" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff4d6d"/>
+      <stop offset="100%" stop-color="#b0002a"/>
+    </linearGradient>
+
+    <!-- Beam blur -->
+    <filter id="blur">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+  </defs>
+
+  <!-- Beam glow -->
+  <polygon
+    points="56,42 90,30 90,66"
+    fill="#ff4d6d"
+    opacity="0.45"
+    filter="url(#blur)"
+  />
+
+  <!-- Torch body -->
+  <rect
+    x="24" y="46"
+    width="42" height="18"
+    rx="9"
+    transform="rotate(-25 24 46)"
+    fill="url(#body)"
+  />
+
+  <!-- Lens -->
+  <circle cx="58" cy="40" r="12" fill="url(#lens)"/>
+
+  <!-- Lens ring -->
+  <circle cx="58" cy="40" r="8"
+          stroke="#ffd6f5"
+          stroke-width="3"
+          fill="none"/>
+
+  <!-- Stars -->
+  <polygon points="18,18 20,22 24,23 20,25 18,29 16,25 12,23 16,22"
+           fill="#ff2d55"/>
+  <polygon points="72,16 74,19 78,20 74,22 72,26 70,22 66,20 70,19"
+           fill="#ff2d55"/>
+</svg>
